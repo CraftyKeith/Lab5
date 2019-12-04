@@ -6,6 +6,10 @@
 -->
 <html>
 	<head>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+		<script src="jquery-3.4.1.min.js"></script>
+
 		<title>Lab 5</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -45,33 +49,30 @@
 					</header>
 					<p>Say something about green house gases from https://www.epa.gov/ghgemissions/global-greenhouse-gas-emissions-data, import map of left.</p>
 				</div> -->
-				<div id="map1" style='width: 90vw; height:90vh;'></div>
+
+
+
+				<div  id='mapid'  style='height:200px;'  /></div>
+
+<!-- http://aqicn.org/faq/2015-09-18/map-web-service-real-time-air-quality-tile-api/ -->
 				<script>
-					mapboxgl.accessToken = 'pk.eyJ1IjoiY3JhZnR5a2VpdGgiLCJhIjoiY2poYXQxeWtpMDRwcDM3cnoxc213NzFzcSJ9.DKC2Wj-iDP_ARDtUElmXnw';
+				      var  OSM_URL  =  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+				      var  OSM_ATTRIB  =  '&copy;  <a  href="http://openstreetmap.org/copyright">OpenStreetMap</a>  contributors';
+				      var  osmLayer  =  L.tileLayer(OSM_URL,  {attribution:  OSM_ATTRIB});
 
-						//The map variable, set initial style, center/zoom
-					var map1 = new mapboxgl.Map({
-							container: 'map1',
-							style: 'mapbox://styles/craftykeith/ck3gr8ux90bee1cqstiscez8d', // stylesheet location
-							center: [0,20], // starting position [lng, lat]
-							zoom: 1.75 // starting zoom
-						});
+				      var  WAQI_URL    =  "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=_TOKEN_ID_";
+				      var  WAQI_ATTR  =  'Air  Quality  Tiles  &copy;  <a  href="http://waqi.info">waqi.info</a>';
+				      var  waqiLayer  =  L.tileLayer(WAQI_URL,  {attribution:  WAQI_ATTR});
 
-				//on map load, run function to load the geojson
-				map1.on('load', function(){
-					//add a source layer for earthquakes
-					map1.addSource('earthquakes', {
-								"type": "geojson",
-								"data": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson"
-						});
-						//add the earthquakes to the map
-						map1.addLayer({
-							"id":"equakes",
-							"type":"circle",
-							"source":"earthquakes"
-						});
-				});
+				      var  map1  =  L.map('mapid').setView([47.3,  -122.4],  10);
+				      map.addLayer(osmLayer).addLayer(waqiLayer);
 				</script>
+
+
+
+
+
+
 			</article>
 
 		<!-- Feature 1b -->
