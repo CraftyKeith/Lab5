@@ -2,13 +2,14 @@
 <!--
 	Overflow by HTML5 UP
 	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)-->
 <html>
 	<head>
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 		<script src="jquery-3.4.1.min.js"></script>
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
 
 		<title>Lab 5</title>
 		<meta charset="utf-8" />
@@ -21,23 +22,26 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<h1>Persuasive or narrative stoy</h1>
+					<h1>Climate Change</h1>
 					<p>Keith Lomis</p>
 				</header>
 				<footer>
-					<a href="#banner" class="button style2 scrolly-middle">What has changed in the past 50 years?</a>
+					<a href="#banner" class="button style2 scrolly-middle">What is it?</a>
 				</footer>
 			</section>
 
 		<!-- Banner -->
 			<section id="banner">
 				<header>
-					<h2>Climate change in the past 50 years?</h2>
+					<h2>Definition</h2>
 				</header>
-				<p>Definition of climate change, blach blach blah blah blah blah blah blaaaaaah.<br /></p>
-				<footer>
-					<a href="#first" class="button style2 scrolly">What causes it?</a>
-				</footer>
+				<p>A significant and long-lasting change in the Earth's climate and weather patterns, also called
+					the climate crisis: serious problems that are being caused or likely to be caused by changes in
+					the planets's weather, in particular Earth getting warmer as a result of human activity
+					increasing the level of carbon dioxide in the atmosphere.<br /></p>
+					<footer>
+						<a href="#Second" class="button style2 scrolly-middle">What causes it?</a>
+					</footer>
 			</section>
 
 		<!-- Feature 1a -->
@@ -47,72 +51,161 @@
 					<header>
 						<h2>Green house gases</h2>
 					</header>
-					<p>Say something about green house gases from https://www.epa.gov/ghgemissions/global-greenhouse-gas-emissions-data, import map of left.</p>
+					<p>Any of the various gaseous compounds (such as carbon dioxide or methane) that absorb infrared
+						 radiation, trap heat in the atmosphere, and contribute to the greenhouse effect, defined as
+						 warming of the surface and lower atmosphere of a planet (such as Earth or Venus) that is
+						 caused by conversion of solar radiation into heat in a process involving selective
+						 transmission of short wave solar radiation by the atmosphere, its absorption by the planet's
+						 surface, and reradiation as infrared which is absorbed and partly reradiated back to the
+						 surface by atmospheric gases. </p>
+					<p>Burning coal and other fossil fuels help produce these gases. The ash from coal plants
+						accumulates and releases carbon dioxide in large amounts. This map shows ash content from coal
+						plants in each state.</p>
+						<iframe src="http://www.eia.gov/opendata/embed/iframe.php?geoset_id=COAL.CONS_TOT.98.A&map=us_merc_en&regions=&relation_mode=line" style="width:100vh;height:60vh" ></iframe>
+<!-- https://www.eia.gov/opendata/embed.php?geoset_id=COAL.ASH_CONTENT.98.A&type=map&date_mode=all -->
 				</div>
-				<div  id='mapid'  style='height:400px;'  /></div>
-<!-- http://aqicn.org/faq/2015-09-18/map-web-service-real-time-air-quality-tile-api/ -->
-				<script>
-				      var  OSM_URL  =  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-				      var  OSM_ATTRIB  =  '&copy;  <a  href="http://openstreetmap.org/copyright">OpenStreetMap</a>  contributors';
-				      var  osmLayer  =  L.tileLayer(OSM_URL,  {attribution:  OSM_ATTRIB});
-
-				      var  WAQI_URL    =  "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=_TOKEN_ID_";
-				      var  WAQI_ATTR  =  'Air  Quality  Tiles  &copy;  <a  href="http://waqi.info">waqi.info</a>';
-				      var  waqiLayer  =  L.tileLayer(WAQI_URL,  {attribution:  WAQI_ATTR});
-
-				      var  map1  =  L.map('mapid').setView([47.3,  -122.4],  10);
-				      map1.addLayer(osmLayer).addLayer(waqiLayer);
-				</script>
+				<footer>
+					<a href="#third" class="button style3 scrolly-middle">What effects can this have?</a>
+				</footer>
 			</article>
 
 		<!-- Feature 1b -->
-			<article class="container box style1 left">
-				<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+			<article id="third" class="container box style1 right">
+				<a href="#" class="image fit"><img src="images/airquality2.jpg" alt="" /></a>
+				<div  id='mapid'  style='height:100px; width:400px;' /></div>
 				<div class="inner">
 					<header>
-						<h2>What is happening?</h2>
+						<h2>Effects</h2><br>
 					</header>
-					<p>Air quality, rising sea levels, global temperature averages... Water level map on right?</p>
+					<p>The rise in green house gases is causing global temperature fluxuations that melt sea ice,
+						increase sea levels, and put countless people in danger of floods.<br></p>
 				</div>
+				<footer>
+					<a href="#Fourth" class="button style2 scrolly-left">How is it changing?</a>
+				</footer>
 			</article>
 
-			<!-- Banner 2?-->
-				<!-- <section id="banner2">
-					<header>
-						<h2>Climate change in the past 50 years?</h2>
-					</header>
-					<p>Definition of climate change, blach blach blah blah blah blah blah blaaaaaah.<br /></p>
-					<footer>
-						<a href="#third?????" class="button style2 scrolly">What can we do?</a>
-					</footer>
-				</section> -->
-
 				<!-- Feature 2a -->
-					<article class="container box style1 right">
-						<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+					<article id="Fourth" class="container box style1 center">
+						<!-- <a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a> -->
+
 						<div class="inner">
 							<header>
-								<h2>fossil fuel consumption</h2>
+								<h2>It changes over time</h2>
 							</header>
-							<p>something something something</p>
+							<body>
+							<p>Click a topic on the interactive map to explore a timeline.</p>
+							<iframe src="https://climate.nasa.gov/interactives/climate_time_machine" width="1000" height="700" align="center"></iframe>
+							</body>
 						</div>
+						<footer>
+							<a href="#Fifth" class="button style3 scrolly-center">Am I in danger?</a>
+						</footer>
 					</article>
 
-					<!-- Feature 2b -->
-						<article class="container box style1 center">
-							<!-- <a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-							<div class="inner"> -->
-								<p><iframe src="https://climate.nasa.gov/interactives/climate_time_machine" width="750" height="700" align="center"></iframe></p>
-							</div>
-						</article>
+					<article id="Fifth" class="container box style1">
+						<!-- <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a> -->
+						<div class="inner">
+							<header>
+								<h2>Flood Zones in Pierce County</h2>
+							</header>
+							<p>This map shows you some areas that have been designated high flood areas
+								and the areas that are at risk of increased sea level</p>
+							<div id="flood" style='width: 100vh; height:50vh;'></div>
+							<script>
+								mapboxgl.accessToken = 'pk.eyJ1IjoiY3JhZnR5a2VpdGgiLCJhIjoiY2poYXQxeWtpMDRwcDM3cnoxc213NzFzcSJ9.DKC2Wj-iDP_ARDtUElmXnw';
+
+									//The map variable, set initial style, center/zoom
+								var floodmap = new mapboxgl.Map({
+										container: 'floodmap',
+										style: 'mapbox://styles/craftykeith/cjhav5sxu00ls2rn8yt3z5drz', // stylesheet location
+										center: [-122.46,47.22], // starting position [lng, lat]
+										zoom: 9 // starting zoom
+									});
+									</script>
+						</div>
+						<footer>
+							<a href="#Sixth" class="button style3 scrolly-center">Oh No! What can I do?</a>
+						</footer>
+					</article>
+
+
+					<article id="Sixth" class="container box style1">
+						<div class="inner">
+							<header>
+								<h2>There are many things we can do!</h2>
+							</header>
+							<p>Primarily, preventing the burning of fossil fuels and reducing the amount of energy
+							 we consume can helpful. To start, you can look into <a href="https://www3.epa.gov/carbon-footprint-calculator/">
+ 								reducing your carbon footprint</a>. Driving less, and buying a fuel efficient vehicles,
+								are often mentioned but one should also consider consuming less energy in general and avoiding
+						  highly manufactured products or those that are shipped internationally. "Reduce, reuse,
+							recycle" is a good motto when it comes to consumer goods that would otherwise end up in
+							a landfill. </p>
+								 <!-- https://www.epa.gov/ghgemissions/global-greenhouse-gas-emissions-data -->
+						</div>
+						<footer>
+							<a href="#Seventh" class="button style3 scrolly-left"> I do have a lot of junk stored in my garage.</a>
+						</footer>
+					</article>
+
+
+
+					<article id="Seventh" class="container box style1">
+						<!-- <div class="inner"></div> -->
+									<header>
+										<h2>Solid Waste Facilities</h2>
+									</header>
+									<p> These are all of the facilities in Pierce County you can go to recycle
+										 everything from yard waste to electronics and old appliances.</p>
+									<div id="map" style='width: 100vh; height:50vh;'></div>
+									<script>
+										mapboxgl.accessToken = 'pk.eyJ1IjoiY3JhZnR5a2VpdGgiLCJhIjoiY2poYXQxeWtpMDRwcDM3cnoxc213NzFzcSJ9.DKC2Wj-iDP_ARDtUElmXnw';
+
+											//The map variable, set initial style, center/zoom
+										var map = new mapboxgl.Map({
+												container: 'map',
+												style: 'mapbox://styles/craftykeith/cjhav5sxu00ls2rn8yt3z5drz', // stylesheet location
+												center: [-122.46,47.22], // starting position [lng, lat]
+												zoom: 9 // starting zoom
+											});
+
+									// add a handler for clicking/popups
+									// Thanks to: https://www.mapbox.com/mapbox-gl-js/example/popup-on-click/
+									map.on('click', 'solidwaste', function(e) {
+										//location of popup
+										var coordinates = e.features[0].geometry.coordinates;
+										//2. Set info in popup
+										var description = "<h3>Name: </h3>" +e.features[0].properties.name2 +"<br><h3>Address: </h3>" + e.features[0].properties.address + " " +e.features[0].properties.locale
+										+ " " +e.features[0].properties.address + " WA " + e.features[0].properties.zip + "<br><h3>Directions: </h3>" + e.features[0].properties.directions_;
+										//3. make the popup
+										new mapboxgl.Popup()
+														.setLngLat(coordinates)
+														.setHTML(description)
+														.addTo(map)
+									});
+									</script>
+									</div>
+									</article>
+
+
+
+
+					// <!-- Feature 2b -->
+					// 	<!-- <article class="container box style1 center">
+					// 		<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+					// 		<div class="inner">
+					// 		</div>
+					// 	</article> -->
 
 		<!-- Portfolio -->
-			<article class="container box style2">
+			<!-- <article class="container box style2">
 				<header>
 					<h2>What is your carbon footprint?</h2>
 					<p>https://www3.epa.gov/carbon-footprint-calculator/ average carbon footpront on the right</p>
-				</header>
-				<div class="inner gallery">
+				</header> -->
+
+				<!-- <div class="inner gallery">
 					<div class="row gtr-0">
 						<div class="col-3 col-12-mobile"><a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" alt="" title="Ad infinitum" /></a></div>
 						<div class="col-3 col-12-mobile"><a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" alt="" title="Dressed in Clarity" /></a></div>
@@ -125,8 +218,8 @@
 						<div class="col-3 col-12-mobile"><a href="images/fulls/07.jpg" class="image fit"><img src="images/thumbs/07.jpg" alt="" title="History was made here" /></a></div>
 						<div class="col-3 col-12-mobile"><a href="images/fulls/08.jpg" class="image fit"><img src="images/thumbs/08.jpg" alt="" title="People come and go and walk away" /></a></div>
 					</div>
-				</div>
-			</article>
+				</div> -->
+
 
 		<!-- Contact -->
 			<!-- <article class="container box style3">
@@ -310,7 +403,8 @@
 			</ul> -->
 			<div class="copyright">
 				<ul class="menu">
-					<li>&copy; Untitled. All rights reserved.</li><li>Design: Overflow @ <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>&copy; University of Washington Tacoma - MSGT GIS503 Lab5.</li><li>Design Template:
+						Overflow @ <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
 			</div>
 		</section>
